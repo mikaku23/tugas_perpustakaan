@@ -189,9 +189,6 @@
           elseif($_GET['page']=='siswa_edit'){
             include "view/siswa/edit.php";
           }
-          elseif($_GET['page']=='login'){
-            include "view/login.php";
-          }
           else{
             include "view/buku.php";
           }
