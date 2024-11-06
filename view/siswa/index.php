@@ -15,10 +15,9 @@
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
+                    <th>No</th>
                     <th>NISN</th>
                     <th>Nama siswa</th>
-                    <th>Alamat</th>
-                    <th>Nohp</th>
                     <th>Aksi</th>
                   </tr>
                   </thead>
@@ -26,27 +25,21 @@
 
                     <?php
                         include "koneksi.php";
-                        $nisn=1;
+                        $no=1;
                         $sql=mysqli_query($koneksi,"SELECT * FROM siswa");
                         while($data=mysqli_fetch_array($sql)){
                             echo "
                             <tr>
+                            <td>$no</td>
                             <td>$data[nisn]</td>
                             <td>$data[nama]</td>
-                            <td>$data[alamat]</td>
-                            <td>$data[nohp]</td>
-                            <td><div class='btn-group'>
-                            <a href='#' class='btn btn-sm btn-success' title='Ubah'>
-                                <i class='fa fa-pencil-alt'>
-                                </i>
-                            </a>
-
-                            <a href='#' class='btn btn-sm btn-danger' title='Hapus'>
-                                <i class='fa fa-trash-alt'>
-                                </i>
-                            </a>   
-                        </div></td>
+                             <td>
+                                    <a href='index.php?title=siswa&page=siswa_detail&nisn=$data[nisn]' class='btn btn-outline-primary btn-sm'><i class='fas fa-eye'></i></a>
+                                    <a href='index.php?title=siswa&page=siswa_detail&nisn=$data[nisn]' class='btn btn-outline-warning btn-sm'><i class='fas fa-pencil-alt'></i></i></a>
+                                    <a href='index.php?title=siswa&page=siswa_detail&nisn=$data[nisn]' class='btn btn-outline-danger btn-sm'><i class='far fa-trash-alt'></i></a>
+                            </td>
                           </tr>"; 
+                          $no++;
                         }
                         ?>
             

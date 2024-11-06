@@ -129,7 +129,7 @@
             </li>
             <li class="nav-item <?php echo ($title === 'pegawai' || $title === 'pegawai_create' || $title === 'pegawai_edit') ? 'menu-open' : ''; ?>">
               <a href="index.php?page=pegawai&title=pegawai" class="nav-link <?php if($title === 'pegawai' || $title === 'pegawai_create' || $title === 'pegawai_edit'){ echo 'active'; } ?>">
-                <i class="fas fa-users"></i>
+                <i class="fas fa-user-cog"></i>
                 <p>Pegawai</p>
                 <i class="right fas fa-angle-left"></i>
               </a>
@@ -155,7 +155,7 @@
               </ul>
             </li><li class="nav-item <?php echo ($title === 'buku' || $title === 'buku_create' || $title === 'buku_edit') ? 'menu-open' : ''; ?>">
               <a href="index.php?page=buku&title=buku" class="nav-link <?php if($title === 'buku' || $title === 'buku_create' || $title === 'buku_edit'){ echo 'active'; } ?>">
-                <i class="fas fa-users"></i>
+                <i class="fas fa-book-open"></i>
                 <p>buku</p>
                 <i class="right fas fa-angle-left"></i>
               </a>
@@ -210,6 +210,9 @@
         if (isset($_GET['page'])){
           if($_GET['page']=='dashboard'){
             include "view/dashboard.php";
+          }
+          elseif($_GET['page']=='siswa_detail'){
+            include "view/siswa/detail.php";
           }
           elseif($_GET['page']=='siswa'){
             include "view/siswa/index.php";
