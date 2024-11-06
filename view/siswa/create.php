@@ -29,7 +29,7 @@
 
               </div>
           </div>
-          <form action="db/db_siswa.php?proses=insert" method="POST">
+          <form action="db/db_siswa.php?action=create" method="post">
           <div class="card-body">
 
               <div class="form-group">

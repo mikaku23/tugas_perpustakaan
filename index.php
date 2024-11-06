@@ -214,14 +214,14 @@
           elseif($_GET['page']=='siswa_detail'){
             include "view/siswa/detail.php";
           }
+          elseif($_GET['page']=='siswa_edit'){
+            include "view/siswa/edit.php";
+          }
           elseif($_GET['page']=='siswa'){
             include "view/siswa/index.php";
           }
           elseif($_GET['page'] == 'siswa_create') {
             include "view/siswa/create.php";
-          }
-          elseif($_GET['page']=='siswa_edit'){
-            include "view/siswa/edit.php";
           }
           elseif($_GET['page']=='pegawai'){
             include "view/pegawai/index.php";

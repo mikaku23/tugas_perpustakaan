@@ -35,7 +35,7 @@
                             <td>$data[nama]</td>
                              <td>
                                     <a href='index.php?title=siswa&page=siswa_detail&nisn=$data[nisn]' class='btn btn-outline-primary btn-sm'><i class='fas fa-eye'></i></a>
-                                    <a href='index.php?title=siswa&page=siswa_detail&nisn=$data[nisn]' class='btn btn-outline-warning btn-sm'><i class='fas fa-pencil-alt'></i></i></a>
+                                    <a href='index.php?title=siswa&page=siswa_edit&nisn=$data[nisn]' class='btn btn-outline-warning btn-sm'><i class='fas fa-pencil-alt'></i></i></a>
                                     <a href='index.php?title=siswa&page=siswa_detail&nisn=$data[nisn]' class='btn btn-outline-danger btn-sm'><i class='far fa-trash-alt'></i></a>
                             </td>
                           </tr>"; 
