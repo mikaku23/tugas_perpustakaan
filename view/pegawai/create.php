@@ -29,7 +29,7 @@
 
               </div>
           </div>
-            <form action="db/db_pegawai.php?proses=insert" method="POST">
+          <form action="db/db_pegawai.php?action=create" method="post">
           <div class="card-body">
               <div class="form-group">
                   <label for="nama">Nama Pegawai</label>

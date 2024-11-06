@@ -29,10 +29,6 @@
         <form action="db/db_buku.php?proses=insert" method="POST">
             <div class="card-body">
                 <div class="form-group">
-                    <label for="nobuku">Nomor Buku</label>
-                    <input type="text" class="form-control" id="nobuku" name="nobuku" placeholder="Masukkan nomor buku" required>
-                </div>
-                <div class="form-group">
                     <label for="judul">Judul</label>
                     <input type="text" class="form-control" id="judul" name="judul" placeholder="Masukkan judul" required>
                 </div>

@@ -98,8 +98,8 @@
                 <p>Dashboard</p>
               </a>
             </li>
-            <li class="nav-item <?php echo ($title === 'siswa' || 'page' === 'siswa' || $title === 'siswa_create' || $title === 'siswa_edit') ? 'menu-open' : ''; ?>">
-              <a href="index.php?page=siswa&title=siswa" class="nav-link <?php if($title === 'siswa' || $title === 'siswa_create' || $title === 'siswa_edit'){ echo 'active'; } ?>">
+            <li class="nav-item <?php echo ($title === 'siswa' || $title === 'siswa_create') ? 'menu-open' : ''; ?>">
+              <a href="index.php?page=siswa&title=siswa" class="nav-link <?php if($title === 'siswa' || $title === 'siswa_create' ){ echo 'active'; } ?>">
                 <i class="fas fa-users"></i>
                 <p>
                   Siswa 
@@ -119,16 +119,10 @@
                     <p>Create</p>
                   </a>
                 </li>
-                <li class="nav-item">
-                  <a href="index.php?page=siswa_edit&title=siswa_edit" class="nav-link <?php if($title === 'siswa_edit') echo 'active'; ?>">
-                    <i class="far fa-edit"></i>
-                    <p>Edit</p>
-                  </a>
-                </li>
               </ul>
             </li>
-            <li class="nav-item <?php echo ($title === 'pegawai' || $title === 'pegawai_create' || $title === 'pegawai_edit') ? 'menu-open' : ''; ?>">
-              <a href="index.php?page=pegawai&title=pegawai" class="nav-link <?php if($title === 'pegawai' || $title === 'pegawai_create' || $title === 'pegawai_edit'){ echo 'active'; } ?>">
+            <li class="nav-item <?php echo ($title === 'pegawai' || $title === 'pegawai_create' ) ? 'menu-open' : ''; ?>">
+              <a href="index.php?page=pegawai&title=pegawai" class="nav-link <?php if($title === 'pegawai' || $title === 'pegawai_create'){ echo 'active'; } ?>">
                 <i class="fas fa-user-cog"></i>
                 <p>Pegawai</p>
                 <i class="right fas fa-angle-left"></i>
@@ -144,12 +138,6 @@
                   <a href="index.php?page=pegawai_create&title=pegawai_create" class="nav-link <?php if($title === 'pegawai_create') echo 'active'; ?>">
                     <i class="fas fa-plus"></i>
                     <p>Create</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="index.php?page=pegawai_edit&title=pegawai_edit" class="nav-link <?php if($title === 'pegawai_edit') echo 'active'; ?>">
-                    <i class="far fa-edit"></i>
-                    <p>Edit</p>
                   </a>
                 </li>
               </ul>
@@ -170,12 +158,6 @@
                   <a href="index.php?page=buku_create&title=buku_create" class="nav-link <?php if($title === 'buku_create') echo 'active'; ?>">
                     <i class="fas fa-plus"></i>
                     <p>Create</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="index.php?page=buku_edit&title=buku_edit" class="nav-link <?php if($title === 'buku_edit') echo 'active'; ?>">
-                    <i class="far fa-edit"></i>
-                    <p>Edit</p>
                   </a>
                 </li>
               </ul>
@@ -213,6 +195,12 @@
           }
           elseif($_GET['page']=='siswa_detail'){
             include "view/siswa/detail.php";
+          }
+          elseif($_GET['page']=='pegawai_detail'){
+            include "view/pegawai/detail.php";
+          }
+          elseif($_GET['page']=='buku_detail'){
+            include "view/buku/detail.php";
           }
           elseif($_GET['page']=='siswa_edit'){
             include "view/siswa/edit.php";

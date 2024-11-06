@@ -29,3 +29,4 @@ if($aksi=="create"){
     mysqli_query($koneksi,$query);
 }
 header("location:../index.php?title=siswa&page=siswa");
+

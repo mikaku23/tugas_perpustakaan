@@ -34,7 +34,7 @@
 
               <div class="form-group">
                   <label for="nisn">NISN</label>
-                  <input type="text" class="form-control" id="nisn" name="nisn" placeholder="Masukkan NISN" required>
+                  <input type="number" class="form-control" id="nisn" name="nisn" placeholder="Masukkan NISN" required>
               </div>
               <div class="form-group">
                   <label for="nama">Nama Siswa</label>
@@ -55,9 +55,11 @@
              <button type="submit" class="btn btn-primary">
                 <i class="fas fa-save"></i> Simpan
              </button>
+                <a href='index.php?page=siswa_create&title=siswa_create'>
             <button type="reset" class="btn btn-warning">
                 <ion-icon name="refresh-circle-outline" class="reset-icon"></ion-icon> Reset
            </button>
+                </a>
         </div>
 
           </form>

@@ -10,7 +10,7 @@
 
       <div class="card card-warning">
           <div class="card-header">
-              <h3 class="card-title">Ubah Data Siswa</h3>
+              <h3 class="card-title">Ubah Data <?=$data['nama'] ?></h3>
               </div>
           </div>
           <div class="card-body">
@@ -36,6 +36,11 @@
           </div>
           <!-- /.card-body -->
           <div class="card-footer text-right">
+            <a href='index.php?page=siswa&title=siswa'>
+             <button type="submit" class="btn btn-primary">
+                <i class="fas fa-arrow-circle-left"></i> Kembali
+             </button>
+             </a>
               <button type="submit" class="btn btn-warning"><i class="fas fa-save"></i> Ubah</button>
           </div>
           </form>
