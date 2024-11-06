@@ -9,7 +9,8 @@ if($proses=='insert'){
     $alamat=$_POST['alamat'];
     $nohp=$_POST['nohp'];
 
-  mysqli_query($koneksi, "INSERT INTO siswa SET nisn='$nisn', nama='$nama', alamat='$alamat', nohp='$nohp'");
-}
+  $query="INSERT INTO siswa SET nisn='$nisn', nama='$nama', alamat='$alamat', nohp='$nohp'";
+  mysqli_query($koneksi,$query);
 
-header("location:../index.php?halaman=siswa");
+  header("location:../index.php?page=siswa&title=siswa");
+}

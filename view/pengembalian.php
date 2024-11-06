@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Siswa</title>
+    <title>Pengembalian</title>
 </head>
 <body>
        <!-- Default box -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Buku</h3>
+          <h3 class="card-title">Pengembalian</h3>
 
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -21,7 +21,7 @@
           </div>
         </div>
         <div class="card-body">
-          ini adalah halaman Buku
+          ini adalah halaman Pengembalian
         </div>
         <!-- /.card-body -->
         

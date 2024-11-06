@@ -1,6 +1,6 @@
 <div class="card">
           <div class="card-header">
-              <h3 class="card-title">Data Siswa</h3>
+              <h3 class="card-title">Data Pegawai</h3>
 
               <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -15,10 +15,11 @@
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                    <th>NISN</th>
-                    <th>Nama siswa</th>
-                    <th>Alamat</th>
-                    <th>Nohp</th>
+                    <th>Nomor buku</th>
+                    <th>img</th>
+                    <th>Judul</th>
+                    <th>Pengarang</th>
+                    <th>Tanggal catat</th>
                     <th>Aksi</th>
                   </tr>
                   </thead>
@@ -26,15 +27,16 @@
 
                     <?php
                         include "koneksi.php";
-                        $nisn=1;
-                        $sql=mysqli_query($koneksi,"SELECT * FROM siswa");
+                        $sql=mysqli_query($koneksi,"SELECT * FROM buku");
                         while($data=mysqli_fetch_array($sql)){
+
                             echo "
                             <tr>
-                            <td>$data[nisn]</td>
-                            <td>$data[nama]</td>
-                            <td>$data[alamat]</td>
-                            <td>$data[nohp]</td>
+                            <td>$data[nobuku]</td>
+                            <td></td>
+                            <td>$data[judul]</td>
+                            <td>$data[pengarang]</td>
+                            <td>$data[tanggalcatat]</td>
                             <td><div class='btn-group'>
                             <a href='#' class='btn btn-sm btn-success' title='Ubah'>
                                 <i class='fa fa-pencil-alt'>
@@ -48,6 +50,7 @@
                         </div></td>
                           </tr>"; 
                         }
+
                         ?>
             
                 </tbody>
@@ -59,3 +62,5 @@
           <!-- /.card-body -->
 
       </div>
+      
+                           

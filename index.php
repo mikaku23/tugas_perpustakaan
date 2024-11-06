@@ -98,7 +98,7 @@
                 <p>Dashboard</p>
               </a>
             </li>
-            <li class="nav-item <?php echo ($title === 'siswa' || $title === 'siswa_create' || $title === 'siswa_edit') ? 'menu-open' : ''; ?>">
+            <li class="nav-item <?php echo ($title === 'siswa' || 'page' === 'siswa' || $title === 'siswa_create' || $title === 'siswa_edit') ? 'menu-open' : ''; ?>">
               <a href="index.php?page=siswa&title=siswa" class="nav-link <?php if($title === 'siswa' || $title === 'siswa_create' || $title === 'siswa_edit'){ echo 'active'; } ?>">
                 <i class="fas fa-users"></i>
                 <p>
@@ -153,13 +153,49 @@
                   </a>
                 </li>
               </ul>
+            </li><li class="nav-item <?php echo ($title === 'buku' || $title === 'buku_create' || $title === 'buku_edit') ? 'menu-open' : ''; ?>">
+              <a href="index.php?page=buku&title=buku" class="nav-link <?php if($title === 'buku' || $title === 'buku_create' || $title === 'buku_edit'){ echo 'active'; } ?>">
+                <i class="fas fa-users"></i>
+                <p>buku</p>
+                <i class="right fas fa-angle-left"></i>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="index.php?page=buku&title=buku" class="nav-link <?php if($title === 'buku') echo 'active'; ?>">
+                    <i class="fas fa-database"></i>
+                    <p>Database</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="index.php?page=buku_create&title=buku_create" class="nav-link <?php if($title === 'buku_create') echo 'active'; ?>">
+                    <i class="fas fa-plus"></i>
+                    <p>Create</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="index.php?page=buku_edit&title=buku_edit" class="nav-link <?php if($title === 'buku_edit') echo 'active'; ?>">
+                    <i class="far fa-edit"></i>
+                    <p>Edit</p>
+                  </a>
+                </li>
+              </ul>
             </li>
             <li class="nav-item">
-              <a href="index.php?page=buku&title=buku" class="nav-link <?php if($title==='buku') echo 'active'; ?>">
-                <i class="fas fa-book-open"></i>
-                <p>Buku</p>
+              <a href="index.php?page=peminjaman&title=peminjaman" class="nav-link <?php if($title==='peminjaman') echo 'active'; ?>">
+                <!-- <i class="fas fa-people-carry"></i> 2 orang meminjam -->
+                <!-- <i class="fas fa-hand-holding"></i> tangan minta -->
+                 <!-- <i class="fas fa-hands"></i> tangan 2 minta -->
+                <i class="fas fa-boxes"></i> <!-- tree box -->
+                <p>Peminjaman</p>
               </a>
             </li>
+            <li class="nav-item">
+              <a href="index.php?page=pengembalian&title=pengembalian" class="nav-link <?php if($title==='pengembalian') echo 'active'; ?>">
+                <i class="fas fa-user-check"></i>
+                <p>Pengembalian</p>
+              </a>
+            </li>
+
           </ul>
         </nav>
       </div>
@@ -175,15 +211,6 @@
           if($_GET['page']=='dashboard'){
             include "view/dashboard.php";
           }
-          elseif($_GET['page']=='pegawai'){
-            include "view/pegawai/index.php";
-          }
-          elseif($_GET['page'] == 'pegawai_create') {
-            include "view/pegawai/create.php";
-          }
-          elseif($_GET['page']=='pegawai_edit'){
-            include "view/pegawai/edit.php";
-          }
           elseif($_GET['page']=='siswa'){
             include "view/siswa/index.php";
           }
@@ -193,10 +220,31 @@
           elseif($_GET['page']=='siswa_edit'){
             include "view/siswa/edit.php";
           }
-
-          else{
-            include "view/buku.php";
+          elseif($_GET['page']=='pegawai'){
+            include "view/pegawai/index.php";
           }
+          elseif($_GET['page'] == 'pegawai_create') {
+            include "view/pegawai/create.php";
+          }
+          elseif($_GET['page']=='pegawai_edit'){
+            include "view/pegawai/edit.php";
+          }
+          elseif($_GET['page']=='buku'){
+            include "view/buku/index.php";
+          }
+          elseif($_GET['page'] == 'buku_create') {
+            include "view/buku/create.php";
+          }
+          elseif($_GET['page']=='buku_edit'){
+            include "view/buku/edit.php";
+          }
+          elseif($_GET['page']=='peminjaman'){
+            include "view/peminjaman.php";
+          }
+          elseif($_GET['page']=='pengembalian'){
+            include "view/pengembalian.php";
+          }
+
         } else {
           include "view/dashboard.php";
         }

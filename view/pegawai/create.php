@@ -4,9 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+<script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" type="module"></script>
+<script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" nomodule></script>
+
 </head>
 <body>
-        
+    <style>
+        .reset-icon {
+    font-size: 1.2em; 
+    vertical-align: middle;
+    position: relative;
+    top: -2px;
+}
+
+        </style>
     <div class="card card-success">
           <div class="card-header">
               <h3 class="card-title">Tambah Data Pegawai</h3>
@@ -18,26 +29,20 @@
 
               </div>
           </div>
-          <form action="" method="post">
+            <form action="db/db_pegawai.php?proses=insert" method="POST">
           <div class="card-body">
-
-              <div class="form-group">
-                  <label for="nisn">Id Pegawai</label>
-                  <input type="text" class="form-control" id="nisn" placeholder="Masukkan NISN" required>
-              </div>
               <div class="form-group">
                   <label for="nama">Nama Pegawai</label>
-                  <input type="text" class="form-control" id="nama" placeholder="Masukkan nama" required>
+                  <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan nama" required>
               </div>
-              <div class="form-group">
-                  <label for="Alamat">Alamat</label>
-                  <textarea class="form-control" rows="3" id="alamat" placeholder="Masukkan Alamat" required></textarea>
-              </div>
-              <div class="form-group">
+                <div class="form-group">
                   <label for="nohp">No HP</label>
-                  <input type="text" class="form-control" id="nohp" placeholder="Masukkan nohp" required>
+                  <input type="text" class="form-control" id="nohp" name="nohp" placeholder="Masukkan nohp" required>
               </div>
-           
+              <div class="form-group">
+                  <label for="alamat">Alamat</label>
+                  <textarea class="form-control" rows="3" id="alamat" name="alamat" placeholder="Masukkan Alamat" required></textarea>
+              </div>
 
           </div>
           <!-- /.card-body -->

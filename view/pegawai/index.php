@@ -1,4 +1,4 @@
-  <div class="card">
+<div class="card">
           <div class="card-header">
               <h3 class="card-title">Data Pegawai</h3>
 
@@ -10,25 +10,49 @@
               </div>
           </div>
           <div class="card-body">
-              <div class="row">
-                  <div class="col">
-                      <a href="index.php?page=pegawai_create&title=pegawai_create" class="btn btn-success btn-md"><i class="fas fa-user-plus"></i> Tambah Data</a>
-                      <a href="index.php?page=pegawai_edit&title=pegawai_edit" class="btn btn-success btn-md"><i class="fas fa-user-plus"></i> Edit Data</a>
-                  </div>
-              </div>
               <div class="row pt-3">
                 <div class="col">
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                    <th>Id Pegawai</th>
+                    <th>Id pegawai</th>
                     <th>Nama pegawai</th>
+                    <th>No hp</th>
                     <th>Alamat</th>
-                    <th>Nohp</th>
-                    
+                    <th>Aksi</th>
                   </tr>
                   </thead>
-                  
+                  <tbody>
+
+                    <?php
+                        include "koneksi.php";
+                        $idpegawai=1;
+                        $sql=mysqli_query($koneksi,"SELECT * FROM pegawai");
+                        while($data=mysqli_fetch_array($sql)){
+
+                            echo "
+                            <tr>
+                                <td>$idpegawai</td>
+                                <td>{$data['nama']}</td>
+                                <td>{$data['nohp']}</td>
+                                <td>{$data['alamat']}</td>
+                                <td>
+                                    <div class='btn-group'>
+                                        <a href='#' class='btn btn-sm btn-success' title='Ubah'>
+                                            <i class='fa fa-pencil-alt'></i>
+                                        </a>
+                                        <a href='#' class='btn btn-sm btn-danger' title='Hapus'>
+                                            <i class='fa fa-trash-alt'></i>
+                                        </a>   
+                                    </div>
+                                </td>
+                            </tr>";
+                            $idpegawai++; 
+                        }
+
+                        ?>
+            
+                </tbody>
                 </table>
                 </div>
               </div>
