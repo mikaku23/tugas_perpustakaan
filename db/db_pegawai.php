@@ -1,40 +1,38 @@
+
 <?php
 
+$aksi=$_GET['action'];
 include "../koneksi.php";
-$aksi = $_GET['action'];
 
-if ($aksi == 'create') {
-    $query = mysqli_query($koneksi, "SELECT MAX(idpegawai) AS max_id FROM pegawai");
-    $data = mysqli_fetch_assoc($query);
+if($aksi=='create'){
+    $id_pegawai=$_POST['idpegawai'];
+    $nama=$_POST['nama'];
+    $username=$_POST['username'];
+    $password=password_hash($_POST['password'],PASSWORD_BCRYPT);
+    $alamat=$_POST['alamat'];
+    $nohp=$_POST['nohp'];
 
-    $idpegawai = $data['max_id'] ? $data['max_id'] + 1 : 1;
-    if ($idpegawai > 999) {
-        echo "ID pegawai sudah mencapai batas maksimum 999.";
-        exit;
-    }
-
-    $nama = $_POST['nama'];
-    $nohp = $_POST['nohp'];
-    $alamat = $_POST['alamat'];
-
-    mysqli_query($koneksi, "INSERT INTO pegawai SET idpegawai='$idpegawai', nama='$nama', nohp='$nohp', alamat='$alamat'");
+  mysqli_query($koneksi, "INSERT INTO pegawai2 SET idpegawai='$idpegawai', nama='$nama', username='$username',password='$password', alamat='$alamat', nohp='$nohp'");
 }
+elseif($aksi=="edit"){
+  $idpegawai=$_POST['idpegawai'];
+  $nama=$_POST['nama'];
+  $username=$_POST['username'];
+  $password=password_hash($_POST['password'],PASSWORD_BCRYPT);
+  $alamat=$_POST['alamat'];
+  $nohp=$_POST['nohp'];
+  //var_dump($nisn,$nama,$alamat);
 
-elseif ($aksi == "edit") {
-    $idpegawai = $_POST['idpegawai'];
-    $nama = $_POST['nama'];
-    $nohp = $_POST['nohp'];
-    $alamat = $_POST['alamat'];
+  $query="UPDATE pegawai2 SET nama='$nama',username='$username',password='$password', 
+  alamat='$alamat', nohp='$nohp' WHERE idpegawai='$idpegawai'";
 
-    mysqli_query($koneksi, "UPDATE pegawai SET nama='$nama', alamat='$alamat', nohp='$nohp' WHERE idpegawai='$idpegawai'");
+  $update=mysqli_query($koneksi,$query);
+
 }
 elseif($aksi=='hapus'){
     $idpegawai=$_GET['idpegawai'];
 
-    $query="DELETE FROM pegawai WHERE idpegawai='$idpegawai'";
+    $query="DELETE FROM pegawai2 WHERE idpegawai='$idpegawai'";
     mysqli_query($koneksi,$query);
 }
-
-header("location:../index.php?page=pegawai&title=pegawai");
-
-?>
+header("location:../index.php?title=pegawai&page=pegawai");

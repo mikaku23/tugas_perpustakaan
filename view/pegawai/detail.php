@@ -1,7 +1,7 @@
  <?php
       include "koneksi.php";
       $idpegawai=$_GET['idpegawai'];
-      $query="SELECT * FROM pegawai WHERE idpegawai='$idpegawai'";
+      $query="SELECT * FROM pegawai2 WHERE idpegawai='$idpegawai'";
       $find_one=mysqli_query($koneksi,$query);
       $data=mysqli_fetch_assoc($find_one);
 
@@ -29,6 +29,14 @@
               <div class="form-group">
                   <label for="nama">Nama Pegawai</label>
                   <input type="text" class="form-control" id="nama" name="nama" disabled value="<?=$data['nama'] ?>">
+              </div>
+              <div class="form-group">
+                  <label for="username">Username</label>
+                  <input type="text" class="form-control" id="username" name="username" disabled value="<?=$data['username'] ?>">
+              </div>
+              <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" class="form-control" id="password" name="password" disabled value="<?=$data['password'] ?>">
               </div>
               <div class="form-group">
                   <label for="alamat">Alamat</label>

@@ -39,6 +39,14 @@
                   <label for="nohp">No HP</label>
                   <input type="text" class="form-control" id="nohp" name="nohp" placeholder="Masukkan nohp" required>
               </div>
+                <div class="form-group">
+                  <label for="username">Username</label>
+                  <input type="text" class="form-control" id="username" name="username" placeholder="Masukkan username" required>
+              </div>
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" class="form-control" id="password" name="password" placeholder="Masukkan password" required>
+              </div>
               <div class="form-group">
                   <label for="alamat">Alamat</label>
                   <textarea class="form-control" rows="3" id="alamat" name="alamat" placeholder="Masukkan Alamat" required></textarea>

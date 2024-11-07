@@ -52,14 +52,20 @@
           <!-- /.card-body -->
 
         <div class="card-footer text-right">
+                <a href='index.php?page=siswa&title=siswa'>
              <button type="submit" class="btn btn-primary">
-                <i class="fas fa-save"></i> Simpan
+                <i class="fas fa-arrow-circle-left"></i> Kembali
              </button>
-                <a href='index.php?page=siswa_create&title=siswa_create'>
+             </a>
+                 <a href='index.php?page=siswa_create&title=siswa_create'>
             <button type="reset" class="btn btn-warning">
                 <ion-icon name="refresh-circle-outline" class="reset-icon"></ion-icon> Reset
            </button>
                 </a>
+             <button type="submit" class="btn btn-success">
+                <i class="fas fa-save"></i> Simpan
+             </button>
+
         </div>
 
           </form>

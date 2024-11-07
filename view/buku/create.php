@@ -54,7 +54,7 @@
                     <option value="">Pilih Pegawai</option>
                     <?php
                     include "koneksi.php";
-                    $query = mysqli_query($koneksi, "SELECT idpegawai FROM pegawai");
+                    $query = mysqli_query($koneksi, "SELECT idpegawai FROM pegawai2");
                     while ($data = mysqli_fetch_assoc($query)) {
                         echo "<option value='" . $data['idpegawai'] . "'>" . $data['idpegawai'] .  "</option>";
                     }

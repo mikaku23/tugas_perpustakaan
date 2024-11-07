@@ -21,8 +21,11 @@
                   <thead>
                   <tr>
                     <th>No</th>
-                    <th>Id pegawai</th>
-                    <th>Nama pegawai</th>
+                    <th>Id Pegawai</th>
+                    <th>Nama Pegawai</th>
+                    <th>Username</th>
+                    <th>Alamat</th>
+                    <th>No Hp</th>
                     <th>Aksi</th>
                   </tr>
                   </thead>
@@ -32,14 +35,17 @@
                         include "koneksi.php";
                         $no=1;
                         $idpegawai=1;
-                        $sql=mysqli_query($koneksi,"SELECT * FROM pegawai");
+                        $sql=mysqli_query($koneksi,"SELECT * FROM pegawai2");
                         while($data=mysqli_fetch_array($sql)){
 
                             echo "
                             <tr>
                                 <td>$no</td>
-                                <td>P00$idpegawai</td>
+                                <td>P0$idpegawai</td>
                                 <td>{$data['nama']}</td>
+                                <td>{$data['username']}</td>
+                                <td>{$data['alamat']}</td>
+                                <td>{$data['nohp']}</td>
                                 <td>
                                     <a href='index.php?title=pegawai_view&page=pegawai_detail&idpegawai=$data[idpegawai]' class='btn btn-outline-primary btn-sm'><i class='fas fa-eye'></i></a>
                                     <a href='index.php?title=pegawai_edit&page=pegawai_edit&idpegawai=$data[idpegawai]' class='btn btn-outline-warning btn-sm'><i class='fas fa-pencil-alt'></i></a>
