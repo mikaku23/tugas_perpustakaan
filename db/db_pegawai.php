@@ -5,10 +5,17 @@ $aksi=$_GET['action'];
 include "../koneksi.php";
 
 if($aksi=='create'){
-    $id_pegawai=$_POST['idpegawai'];
+    $query = mysqli_query($koneksi, "SELECT MAX(idpegawai) AS max_id FROM pegawai2");
+    $data = mysqli_fetch_assoc($query);
+    $idpegawai = $data['max_id'] ? $data['max_id'] + 1 : 1;
+    if ($idpegawai > 999) {
+        echo "ID pegawai sudah mencapai batas maksimum 999.";
+        exit;}
+
+
     $nama=$_POST['nama'];
     $username=$_POST['username'];
-    $password=password_hash($_POST['password'],PASSWORD_BCRYPT);
+    $password=$_POST['password'];
     $alamat=$_POST['alamat'];
     $nohp=$_POST['nohp'];
 

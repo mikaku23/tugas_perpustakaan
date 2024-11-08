@@ -49,7 +49,7 @@
                                 <td>
                                     <a href='index.php?title=pegawai_view&page=pegawai_detail&idpegawai=$data[idpegawai]' class='btn btn-outline-primary btn-sm'><i class='fas fa-eye'></i></a>
                                     <a href='index.php?title=pegawai_edit&page=pegawai_edit&idpegawai=$data[idpegawai]' class='btn btn-outline-warning btn-sm'><i class='fas fa-pencil-alt'></i></a>
-                                    <a href='db/db_pegawai.php?action=hapus&idpegawai=$data[idpegawai]' class='btn btn-danger btn-sm'><i class='far fa-trash-alt'></i></a>
+                                
                                 </td>
                             </tr>";
                             $no++;

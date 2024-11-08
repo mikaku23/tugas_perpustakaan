@@ -1,4 +1,10 @@
 <?php
+session_start();
+if(!$_SESSION['status_login']){
+    header("location:view/login.php");
+}
+?>
+<?php
   if(isset($_GET['title'])){
     $title=$_GET['title'];
   }else{
@@ -62,11 +68,11 @@
         </button>
       </div>
       <div class="modal-body">
-        Silakan pilih apakah Anda ingin masuk atau keluar.
+        Apakah anda yakin ingin logout?
       </div>
       <div class="modal-footer">
-        <a href="view/login.php" class="btn btn-primary">Log In</a> <!-- Link ke halaman login -->
-        <a href="logout.php" class="btn btn-danger">Log Out</a> <!-- Link untuk log out -->
+       
+        <a href="view/logout.php" class="btn btn-danger">Log Out</a> <!-- Link untuk log out -->
       </div>
     </div>
   </div>
